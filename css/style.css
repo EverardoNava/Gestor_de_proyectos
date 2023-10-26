@@ -1,0 +1,42 @@
+
+/*Login */
+.seccion-login{
+    min-height: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Index*/
+.btn-group-custom{
+    width: 250px;
+    height: 45px;
+}
+
+/*Tareas*/
+.btn-modal{
+    width: 160px;
+}
+
+/*Proyectos*/
+
+.contenedor-header {
+    display: grid;
+}
+
+
+/*Nuevo Proyecto*/
+
+
+.modal-title {
+    text-align: center;
+    margin: 0 auto;
+}.modal-lg {
+    max-width: 90%; /* Ajusta el ancho deseado */
+}
