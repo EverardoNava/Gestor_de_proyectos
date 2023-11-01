@@ -40,3 +40,10 @@ body {
 }.modal-lg {
     max-width: 90%; /* Ajusta el ancho deseado */
 }
+
+.invalid-feedback {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

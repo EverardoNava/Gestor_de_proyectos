@@ -1,16 +1,11 @@
 'use strict'
-var btnIngresar, btntareas,contenedorIndex, btnNuevaTarea, btnproyectos;
+var btnTareas, contenedorIndex, btnNuevaTarea, btnpProyectos, btnCalendario;
 
-btnIngresar = $("#ingresar");
-btntareas = $("#btn-tareas");
+btnTareas = $("#btn-tareas");
 contenedorIndex = $('#contenedor-index');
 btnNuevaTarea = $('#btn-agregar-tarea');
-btnproyectos = $("#btn-proyectos");
-//Login
-btnIngresar.on("click", function (event) {
-    event.preventDefault();
-    btnIngresar.prop('disabled', true);
-});
+btnProyectos = $("#btn-proyectos");
+btnCalendario = $('#btn-calendario');
 
 //Index
 btntareas.on("click", function (event) {
@@ -21,8 +16,8 @@ btnproyectos.on("click", function (event) {
     contenedorIndex.load('proyectos.html');
 });
 
-$('#btn-calendario').click(function() {
-   
+btnCalendario.click(function () {
+
     // Si el contenedor está visible, lo ocultamos; de lo contrario, lo mostramos
 
     // Si mostramos el calendario, inicialízalo
@@ -106,26 +101,25 @@ $("#busqueda").click(function () {
 });
 
 function searchTable() {
-        var searchText = $("#search-input").val().toLowerCase();
-        $("#modal-nuevoProyeto-miembros table tbody tr").each(function () {
-            var text = $(this).text().toLowerCase();
-            if (text.indexOf(searchText) === -1) {
-                $(this).hide();
-            } else {
-                $(this).show();
-            }
-        });
-    }
-    
-    $('#search-input').on('input', function() {
-        var searchText = $(this).val().toLowerCase();
-        
-        // Tu lógica de filtrado existente
-    
-        // Verificar la longitud del texto en la barra de búsqueda
-        if (searchText.length === 0) {
-            // Si no hay texto, restaura la tabla a su estado original
-            $('#modal-nuevoProyeto-miembros table tbody tr').show();
+    var searchText = $("#search-input").val().toLowerCase();
+    $("#modal-nuevoProyeto-miembros table tbody tr").each(function () {
+        var text = $(this).text().toLowerCase();
+        if (text.indexOf(searchText) === -1) {
+            $(this).hide();
+        } else {
+            $(this).show();
         }
     });
-    
+}
+
+$('#search-input').on('input', function () {
+    var searchText = $(this).val().toLowerCase();
+
+    // Tu lógica de filtrado existente
+
+    // Verificar la longitud del texto en la barra de búsqueda
+    if (searchText.length === 0) {
+        // Si no hay texto, restaura la tabla a su estado original
+        $('#modal-nuevoProyeto-miembros table tbody tr').show();
+    }
+});
